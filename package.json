@@ -1,13 +1,13 @@
 {
-  "name": "jade-react-compiler",
-  "version": "0.3.1",
+  "name": "jade-react-compiler-x",
+  "version": "0.3.2",
   "description": "Jade compiler for Facebook React",
   "authors": [
     "Michael Phan-Ba <michael@mikepb.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/mikepb/jade-react-compiler"
+    "url": "git://github.com/wujunhong/jade-react-compiler-x"
   },
   "main": "index.js",
   "bin": {
