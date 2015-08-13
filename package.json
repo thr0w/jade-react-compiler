@@ -22,13 +22,26 @@
     "uglify-js": "^2.4.21"
   },
   "devDependencies": {
+    "chai": "^3.2.0",
     "js-beautify": "*",
     "markdown": "*",
     "mocha": "*",
     "stylus": "*"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "coverage": "mocha --require blanket -R html-cov -g ReactCases> coverage/coverage.html"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "//\/[\\w-]+\\.js$/",
+      "data-cover-never": [
+        "node_modules"
+      ],
+      "data-cover-reporter-options": {
+        "shortnames": true
+      }
+    }
   },
   "license": "MIT"
 }

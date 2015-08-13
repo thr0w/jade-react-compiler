@@ -1,0 +1,10 @@
+```jade
+ul(a="x", class={a:false,b:true})
+```
+```javascript
+function src(){
+  return React.createElement('ul', { a: 'x',
+    className: [false?'a':'', true?'b':''].join(' ')
+  });
+}
+```

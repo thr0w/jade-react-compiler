@@ -1,0 +1,6 @@
+```jade
+ul(a=x,class="y")
+```
+```javascript
+return React.createElement('ul', { a: 'x', className: 'y' }, []);
+```
