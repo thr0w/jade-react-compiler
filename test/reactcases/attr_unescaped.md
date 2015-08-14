@@ -5,9 +5,9 @@ div
 ```
 ```javascript
 function src(){
-  return React.createElement('div', null, [
+  return React.createElement('div', null, 
     React.createElement('div', { escaped: '<code>'}),
     React.createElement('div', { unescaped: '<code>'})
-  ]);
+  );
 }  
 ```
