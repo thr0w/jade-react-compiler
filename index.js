@@ -24,20 +24,21 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-var Parser = require('jade').Parser;
-var Compiler = require('./lib/compiler');
+var Parser = require('jade').Parser
+var Compiler = require('./lib/compiler')
 
 /**
- * Jade React compiler version.
+ * Jade React
+ r version.
  */
 
-exports.version = '0.3.0';
+exports.version = '0.3.0'
 
 /**
  * Jade filters.
  */
 
-exports.filters = {};
+exports.filters = {}
 
 /**
  * Compile Jade to React view function.
@@ -47,9 +48,9 @@ exports.filters = {};
  * @api public
  */
 
-exports.compile = function (str, options){
-  return eval(getCompiler(str, options).compile());
-};
+exports.compile = function (str, options) {
+  return eval(getCompiler(str, options).compile())
+}
 
 /**
  * Compile Jade to React view module.
@@ -59,9 +60,9 @@ exports.compile = function (str, options){
  * @api public
  */
 
-exports.compileClient = function (str, options){
-  return getCompiler(str, options).compile();
-};
+exports.compileClient = function (str, options) {
+  return getCompiler(str, options).compile()
+}
 
 /**
  * Get compiler for input `str`.
@@ -72,13 +73,13 @@ exports.compileClient = function (str, options){
  */
 
 function getCompiler (str, options) {
-  if (!options) options = {};
-  str = str.toString('utf8');
+  if (!options) options = {}
+  str = str.toString('utf8')
 
   // Parse
-  var parser = new Parser(str, options.filename, options);
-  var tokens = parser.parse();
+  var parser = new Parser(str, options.filename, options)
+  var tokens = parser.parse()
 
   // Compile
-  return new Compiler(tokens, options);
+  return new Compiler(str, tokens, options)
 }

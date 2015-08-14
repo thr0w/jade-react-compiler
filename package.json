@@ -14,18 +14,17 @@
     "jade-react-compiler": "./bin/jade-react-compiler.js"
   },
   "dependencies": {
-    "character-parser": "^1.2.2",
-    "escodegen": "^1.6.1",
-    "esprima": "^2.2.0",
     "jade": "^1.9.2",
-    "react": "^0.13.3",
-    "uglify-js": "^2.4.21"
+    "react": "^0.13.3"
   },
   "devDependencies": {
     "chai": "^3.2.0",
+    "esprima-fb": "^15001.1001.0-dev-harmony-fb",
     "js-beautify": "*",
     "markdown": "*",
     "mocha": "*",
+    "recast": "^0.10.28",
+    "source-map": "^0.4.4",
     "stylus": "*"
   },
   "scripts": {
@@ -34,7 +33,7 @@
   },
   "config": {
     "blanket": {
-      "pattern": "//\/[\\w-]+\\.js$/",
+      "pattern": "///[\\w-]+\\.js$/",
       "data-cover-never": [
         "node_modules"
       ],

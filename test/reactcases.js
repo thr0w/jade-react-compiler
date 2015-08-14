@@ -19,6 +19,10 @@ function createTest (file) {
       var expected = format_src('expected', md.javascript)
       var actual = format_src('actual', actual_js.code)
       expect(actual).to.be.equal(expected)
+    // for (var n in md)
+    // {
+    //   var match = /render\((.*)
+    // }
     }
   })
 }
@@ -26,9 +30,7 @@ function createTest (file) {
 function jact_compile (src) {
   return jact.compileClient(src, {
     format: gen_format,
-    sourceMap: 'src',
-    sourceMapWithCode: true,
-    sourceContent: src
+    sourceFileName: 'src'
   })
 }
 

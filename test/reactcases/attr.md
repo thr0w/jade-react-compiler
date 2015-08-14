@@ -6,3 +6,6 @@ function src(){
   return React.createElement('ul', { a: 'x' });
 }  
 ```
+```render()
+<ul a="x"></ul>
+```
