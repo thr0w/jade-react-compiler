@@ -16,8 +16,8 @@ function createTest (file) {
       }).to.throws(md.error)
     } else {
       var actual_js = jact_compile(md.jade)
-      var expected = format_src(md.javascript)
-      var actual = format_src(actual_js.code)
+      var expected = format_src('expected', md.javascript)
+      var actual = format_src('actual', actual_js.code)
       expect(actual).to.be.equal(expected)
     }
   })
@@ -56,10 +56,16 @@ function parse_md (text) {
   return ret
 }
 
-function format_src (src) {
-  var ast = esprima.parse(src, {sourceType: 'module'})
-  var ret = escodegen.generate(ast, gen_format)
-  return ret
+function format_src (tp, src) {
+  try {
+    var ast = esprima.parse(src, {sourceType: 'module'})
+    var ret = escodegen.generate(ast, gen_format)
+    return ret
+  } catch(e) {
+    var err = new Error(tp + ': ' + e.message + '\n' + src)
+    err.stack = e.stack
+    throw err
+  }
 }
 
 var gen_format = {
