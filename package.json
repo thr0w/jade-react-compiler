@@ -1,9 +1,10 @@
 {
-  "name": "jade-react-compiler-x",
+  "name": "jaect",
   "version": "0.3.2",
   "description": "Jade compiler for Facebook React",
   "authors": [
-    "Michael Phan-Ba <michael@mikepb.com>"
+    "Michael Phan-Ba <michael@mikepb.com>",
+    "thr0w <thr0w@thr0w.lol>"
   ],
   "repository": {
     "type": "git",
@@ -14,16 +15,18 @@
     "jade-react-compiler": "./bin/jade-react-compiler.js"
   },
   "dependencies": {
+    "escodegen-jsx": "0.1.0-1.4.2dev",
+    "esprima-fb": "^15001.1001.0-dev-harmony-fb",
     "jade": "^1.9.2",
     "react": "^0.13.3"
   },
   "devDependencies": {
+    "ast-types": "^0.8.9",
     "chai": "^3.2.0",
-    "esprima-fb": "^15001.1001.0-dev-harmony-fb",
+    "espree": "^2.2.4",
     "js-beautify": "*",
     "markdown": "*",
     "mocha": "*",
-    "recast": "^0.10.28",
     "source-map": "^0.4.4",
     "stylus": "*"
   },

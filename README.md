@@ -1,3 +1,7 @@
+# This experimental package transforms JADE in JavaScript for React
+
+
+
 # Jade React Compiler
 
 Use it in your favourite packaging tool.
