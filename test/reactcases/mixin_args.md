@@ -6,6 +6,8 @@ ul
   +pet('&dog')
   +pet('pig')
 ```
+```pending
+```
 ```javascript
 function src() {
    function pet($ret, name, $block) {

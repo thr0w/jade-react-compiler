@@ -64,6 +64,8 @@ exports.compileClient = function (str, options) {
   return getCompiler(str, options).compile()
 }
 
+exports.gen_annotation = Compiler.gen_annotation
+
 /**
  * Get compiler for input `str`.
  *

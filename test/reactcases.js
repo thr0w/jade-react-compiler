@@ -8,23 +8,32 @@ describe('ReactCase', function () {
 })
 
 function createTest (file) {
-  it('ReactCase_' + file, function () {
+  try {
+    var title = 'ReactCase_' + file
     var md = parse_md(fs.readFileSync(root + file, 'utf8'))
-    if (md.error) {
-      expect(function () {
-        jact_compile(md.jade)
-      }).to.throws(md.error)
-    } else {
-      var actual_js = jact_compile(md.jade)
-      var expected = format_src('expected', md.javascript)
-      var actual = format_src('actual', actual_js.code)
-      expect(actual).to.be.equal(expected)
-    // for (var n in md)
-    // {
-    //   var match = /render\((.*)
-    // }
-    }
-  })
+    if (typeof md.pending !== 'undefined')
+      xit(title)
+    else
+      it(title, function () {
+        if (md.error) {
+          expect(function () {
+            jact_compile(md.jade)
+          }).to.throws(md.error)
+        } else {
+          var actual_js = jact_compile(md.jade)
+          var expected = format_src('expected', md.javascript)
+          var actual = format_src('actual', actual_js.code)
+          expect(actual).to.be.equal(expected)
+        // for (var n in md)
+        // {
+        //   var match = /render\((.*)
+        // }
+        }
+
+      })
+  } catch(e) {
+    xit(title)
+  }
 }
 
 function jact_compile (src) {

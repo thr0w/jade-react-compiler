@@ -13,6 +13,8 @@ div
     p This is my
     p Amazing article
 ```
+```pending
+```
 ```javascript
 
   1 | function src() {
