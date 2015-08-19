@@ -19,7 +19,7 @@ script.
      return React.createElement('ul', null, customers.map(function (customer) {
          return React.createElement('li', { onClick: function(e){clickHandle(customer)} }, React.createElement('span', null, customer.name), React.createElement('span', null, customer.phone));
       }));
-      function clickHandle(customer) {
+      function clickHandle(customer: Customer) {
           alert('click');
       }
   }

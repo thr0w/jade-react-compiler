@@ -1,4 +1,4 @@
-var jact = require('..'), fs = require('fs'), expect = require('chai').expect,  esprima = require('esprima-fb'), escodegen = require('escodegen-jsx')
+var jact = require('..'), fs = require('fs'), expect = require('chai').expect,  esprima = require('esprima-fb'), escodegen = require('escodegen-ts')
 
 var root = __dirname + '/reactcases/'
 
