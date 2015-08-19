@@ -26,6 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 var Parser = require('jade').Parser
 var Compiler = require('./lib/compiler')
+var compileComponent = require('./lib/compileComponent')
 
 /**
  * Jade React
@@ -64,7 +65,7 @@ exports.compileClient = function (str, options) {
   return getCompiler(str, options).compile()
 }
 
-exports.gen_annotation = Compiler.gen_annotation
+exports.compileComponent = compileComponent
 
 /**
  * Get compiler for input `str`.
