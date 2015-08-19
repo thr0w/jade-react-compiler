@@ -69,7 +69,6 @@ function parse_md (text) {
 function format_src (tp, src) {
   try {
     var ast = esprima.parse(src, {sourceType: 'module'})
-    console.log(JSON.stringify(ast, null, 2))
     var ret = escodegen.generate(ast, gen_format)
     return ret
   } catch(e) {
