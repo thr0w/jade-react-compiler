@@ -1,7 +1,7 @@
 ```jade
 - property name: string
 div
-  Hello #{name}
+  | Hello #{name}
 ```
 ```javascript
 import {createClass, createElement} from "react";

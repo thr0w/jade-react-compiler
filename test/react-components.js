@@ -1,4 +1,5 @@
-var jaect = require('..'), fs = require('fs'), expect = require('chai').expect,  esprima = require('esprima-fb'), escodegen = require('escodegen-ts')
+var jaect = require('..'), fs = require('fs'),
+  path = require('path'), expect = require('chai').expect,  esprima = require('esprima-fb'), escodegen = require('escodegen-ts')
 
 var root = __dirname + '/react-components/'
 
@@ -15,12 +16,13 @@ function createTest (file) {
       xit(title)
     else
       it(title, function () {
+        var name = path.basename(file, '.md')
         if (md.error) {
           expect(function () {
-            jaect_compile(md.jade)
+            jaect_compile(name, md.jade)
           }).to.throws(md.error)
         } else {
-          var actual_js = jaect_compile(md.jade)
+          var actual_js = jaect_compile(name, md.jade)
           var expected = format_src('expected', md.javascript)
           var actual = format_src('actual', actual_js.code)
           expect(actual).to.be.equal(expected)
@@ -32,10 +34,10 @@ function createTest (file) {
   }
 }
 
-function jaect_compile (src) {
+function jaect_compile (name, src) {
   return jaect.compileComponent(src, {
     format: gen_format,
-    sourceFileName: 'src',
+    sourceFileName: name,
     sourceContent: src
   })
 }
