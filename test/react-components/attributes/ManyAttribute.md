@@ -7,7 +7,7 @@ ul(class="menu")
 ```
 ```javascript
 import {createClass, createElement} from "react";
-function ManyAttribute()
+var ManyAttribute=(function ()
 {
   var classes: string[] = ["menu_item", "dark", "rustic"];
   return createClass({
@@ -20,6 +20,6 @@ function ManyAttribute()
       );
     }
   })
-}
+})()
 module.exports = ManyAttribute;
 ```

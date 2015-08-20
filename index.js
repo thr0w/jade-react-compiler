@@ -78,11 +78,16 @@ exports.compileComponent = compileComponent
 function getCompiler (str, options) {
   if (!options) options = {}
   str = str.toString('utf8')
-
-  // Parse
   var parser = new Parser(str, options.filename, options)
-  var tokens = parser.parse()
+  // Parse
+  try {
+    var tokens = parser.parse()
 
-  // Compile
-  return new Compiler(str, tokens, options)
+    // Compile
+    return new Compiler(str, tokens, options)
+  } catch(e) {
+    debugger
+    parser = parser.context()
+    throw new Error('Line '.concat(parser.lexer.lineno).concat(' ').concat(e.message))
+  }
 }

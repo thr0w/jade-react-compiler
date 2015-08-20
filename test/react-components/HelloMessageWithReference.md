@@ -5,14 +5,14 @@ div
 ```
 ```javascript
 import {createClass, createElement} from "react";
-function HelloMessageWithReference()
+var HelloMessageWithReference=(function ()
 {
   var name: Store.TYPE
   return createClass({
     displayName: "HelloMessageWithReference",
     render: function() {
       return createElement("div", null, "Hello ", name);
-    },
+    },  
     componentWillMount: function() {
        name = Store.addRef();
     },
@@ -20,6 +20,6 @@ function HelloMessageWithReference()
        name.releaseRef();
     }
   })
-}
+})()
 module.exports = HelloMessageWithReference
 ```

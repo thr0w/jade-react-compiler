@@ -9,7 +9,7 @@ div
 ```
 ```javascript
 import {createClass, createElement} from "react";
-function BooleanAttribute()
+var BooleanAttribute=(function ()
 {
   return createClass({
     displayName: "BooleanAttribute",
@@ -21,6 +21,6 @@ function BooleanAttribute()
       );
     }
   })
-}
+})()
 module.exports = BooleanAttribute;
 ```
