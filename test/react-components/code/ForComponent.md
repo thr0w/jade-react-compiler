@@ -11,11 +11,11 @@ function ForComponent()
   return createClass({
     displayName: "ForComponent",
     render: function() {
-      var children = [];
+      var $ret = [];
       for (var x = 0; x < 3; x++){
-        children.push(createElement("li", null, ["item " + x]));
+        $ret.push(createElement("li", null, ["item " + x]));
       }
-      return createElement("div", null, [children]);
+      return createElement("div", null, $ret);
     }
   })
 }

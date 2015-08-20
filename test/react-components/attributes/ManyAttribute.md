@@ -3,23 +3,23 @@
 ul(class="menu")
   li(class=classes onClick=function(e){
      alert('Clicou no item!');
-  })= Home
+  }) Home
 ```
 ```javascript
 import {createClass, createElement} from "react";
-function ManyAtribute()
+function ManyAttribute()
 {
   var classes: string[] = ["menu_item", "dark", "rustic"];
   return createClass({
-    displayName: "ManyAtribute",
+    displayName: "ManyAttribute",
     render: function() {
-      return createElement("ul", {class:"menu"}, [
-        createElement("li", {class:classes, onClick:function(){
+      return createElement("ul", {className:"menu"},
+        createElement("li", {onClick:function(e){
           alert('Clicou no item!');
-        }}, ["Home"])
-      ]);
+        }, className:classes}, "Home")
+      );
     }
   })
 }
-module.exports = ManyAtribute;
+module.exports = ManyAttribute;
 ```
