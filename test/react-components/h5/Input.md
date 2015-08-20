@@ -1,5 +1,5 @@
 ```jade
-// - require('./input.less');
+- require('./input.less');
 
 - property store: EditStore
 - property field: string
