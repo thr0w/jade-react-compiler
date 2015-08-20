@@ -1,17 +1,24 @@
 var jaect = require('..'), fs = require('fs'),
   path = require('path'), expect = require('chai').expect,  esprima = require('esprima-fb'), escodegen = require('escodegen-ts')
 
-var root = __dirname + '/react-components/'
+var root = __dirname + '/'
 
-describe('ReactComponents', function () {
-  var files = fs.readdirSync(root)
-  files.forEach(createTest)
+describe('ReactCase', function () {
+  add_dir('react-components/')
+  function add_dir (folder) {
+    var files = fs.readdirSync(root + folder)
+    files.forEach(function (file) {
+      var stat = fs.statSync(root + folder + file)
+      if (stat.isDirectory()) add_dir(folder + file + '/')
+      else if (stat.isFile())  createTest(folder, file)
+    })
+  }
 })
 
-function createTest (file) {
+function createTest (folder, file) {
   try {
-    var title = 'ReactComponent_' + file
-    var md = parse_md(fs.readFileSync(root + file, 'utf8'))
+    var title = folder + file
+    var md = parse_md(fs.readFileSync(root + folder + file, 'utf8'))
     if (typeof md.pending !== 'undefined')
       xit(title)
     else

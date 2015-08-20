@@ -1,16 +1,23 @@
 var jact = require('..'), fs = require('fs'), expect = require('chai').expect,  esprima = require('esprima-fb'), escodegen = require('escodegen-ts')
 
-var root = __dirname + '/reactcases/'
+var root = __dirname + '/'
 
 describe('ReactCase', function () {
-  var files = fs.readdirSync(root)
-  files.forEach(createTest)
+  add_dir('reactcases/')
+  function add_dir (folder) {
+    var files = fs.readdirSync(root + folder)
+    files.forEach(function (file) {
+      var stat = fs.statSync(root + folder + file)
+      if (stat.isDirectory()) add_dir(folder + file + '/')
+      else if (stat.isFile())  createTest(folder, file)
+    })
+  }
 })
 
-function createTest (file) {
+function createTest (folder, file) {
   try {
-    var title = 'ReactCase_' + file
-    var md = parse_md(fs.readFileSync(root + file, 'utf8'))
+    var title = folder + file
+    var md = parse_md(fs.readFileSync(root + folder + file, 'utf8'))
     if (typeof md.pending !== 'undefined')
       xit(title)
     else
