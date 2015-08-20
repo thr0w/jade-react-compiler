@@ -12,11 +12,11 @@ function EachComponent()
   return createClass({
     displayName: "EachComponent",
     render: function() {
-      var children = [];
-      children = children.concat(list.map(function(item){
+       var $ret = [];
+       $ret = $ret.concat(list.map(function(item){
         return createElement("li", {}, [item]);
       }))
-      return createElement("div", null, [children]);
+      return createElement("div", null, $ret);
     }
   })
 }
