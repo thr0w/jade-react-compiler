@@ -1,6 +1,6 @@
 ```jade
-- var user = { description: 'foo bar baz' }
-- var authorised = false
+- var user: {description: string} = { description: 'foo bar baz' }
+- var authorised: boolean = false
 #user
   if user.description
     h2 Description
@@ -15,9 +15,7 @@
     p.description User has no description
 ```
 ```javascript
-function src(){
-  var user = { description: 'foo bar baz' };
-  var authorised = false;
+function src(user: {description: string}, authorised: boolean){
   return React.createElement('div', { id: 'user' },
     (function(){ var $ret = [];
       if (user.description) {

@@ -1,6 +1,6 @@
 {
   "name": "jaect",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "Jade compiler for Facebook React",
   "authors": [
     "Michael Phan-Ba <michael@mikepb.com>",

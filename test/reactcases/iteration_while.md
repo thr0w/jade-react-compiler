@@ -1,12 +1,11 @@
 ```jade
-- var n = 0
+- var n: number = 0
 ul
   while n < 4
     li= n++
 ```
 ```javascript
-function src() {
-  var n = 0;
+function src(n: number) {
   return React.createElement('ul', null, function () {
     var $ret = [];
     while (n < 4) {

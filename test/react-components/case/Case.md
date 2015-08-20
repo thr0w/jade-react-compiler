@@ -13,12 +13,12 @@ div
 import {createClass, createElement} from "react";
 function Case()
 {
+  var friends: number = 10;
   return createClass({
     displayName: "Case",
     render: function() {
       return createElement('div', null, function () {
            var $ret = [];
-           var friends: number = 10;
            switch (friends) {
            case 0:
              $ret.push(createElement('p', null, 'you have no friends'));

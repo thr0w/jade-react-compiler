@@ -8,15 +8,14 @@ div
 import {createClass, createElement} from "react";
 function EachComponent()
 {
-  var list = ["um", "dois", "tres", "quatro", "cinco"]
+  var list: string[] = ["um", "dois", "tres", "quatro", "cinco"]
   return createClass({
     displayName: "EachComponent",
     render: function() {
-       var $ret = [];
-       $ret = $ret.concat(list.map(function(item){
-        return createElement("li", {}, [item]);
-      }))
-      return createElement("div", null, $ret);
+      return createElement("div", null,
+        list.map(function (item) {
+                      return createElement('li', null, item)
+        }))
     }
   })
 }

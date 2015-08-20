@@ -3,6 +3,8 @@ div
   - for (var x = 0; x < 3; x++)
   li item #{x}
 ```
+```pending
+```
 ```javascript
 import {createClass, createElement} from "react";
 function ForComponent()

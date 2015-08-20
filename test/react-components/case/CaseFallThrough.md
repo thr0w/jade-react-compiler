@@ -12,12 +12,12 @@ div
 import {createClass, createElement} from "react";
 function CaseFallThrough()
 {
+  var friends: number = 0;
   return createClass({
     displayName: "CaseFallThrough",
     render: function() {
       return createElement('div', null, function () {
           var $ret = [];
-          var friends: number = 0;
           switch (friends) {
           case 0:
           case 1:

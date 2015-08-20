@@ -1,5 +1,5 @@
 ```jade
-- var friends = 0
+- var friends: number = 0
 case friends
   when 0
   when 1
@@ -8,8 +8,7 @@ case friends
     p you have #{friends} friends
 ```
 ```javascript
-function src(){
-  var friends = 0
+function src(friends: number){
   switch (friends) {
     case 0:
     case 1:

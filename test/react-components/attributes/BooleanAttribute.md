@@ -15,9 +15,9 @@ function BooleanAttribute()
     displayName: "BooleanAttribute",
     render: function() {
       return createElement("div", null,
-        createElement("input", {type:"checkbox", checkbox: true, className: "checkbox1"}, "String"),
-        createElement("input", {type:"checkbox", checkbox: true, className: "checkbox2"}, "Number"),
-        createElement("input", {type:"checkbox", checkbox: false, className: "checkbox3"}, "Array")
+        createElement("input", {type:"checkbox", checkbox: true, className: "checkbox1"}), "String",
+        createElement("input", {type:"checkbox", checkbox: true, className: "checkbox2"}), "Number",
+        createElement("input", {type:"checkbox", checkbox: false, className: "checkbox3"}), "Array"
       );
     }
   })

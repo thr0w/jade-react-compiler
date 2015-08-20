@@ -1,10 +1,9 @@
 ```jade
-- var authenticated = true
+- var authenticated: boolean = true
 div(class=authenticated ? 'authed' : 'anon')
 ```
 ```javascript
-function src(){
-  var authenticated = true;
+function src(authenticated: boolean){
   return React.createElement('div',
     { className: authenticated ? 'authed' : 'anon' }
   );

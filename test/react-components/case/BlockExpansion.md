@@ -10,12 +10,12 @@ div
 import {createClass, createElement} from "react";
 function BlockExpansion()
 {
+  var friends: number = 1;
   return createClass({
     displayName: "BlockExpansion",
     render: function() {
       return createElement('div', null, function () {
            var $ret = [];
-           var friends: number = 1;
            switch (friends) {
            case 0:
                $ret.push(createElement('p', null, 'you have no friends'));
