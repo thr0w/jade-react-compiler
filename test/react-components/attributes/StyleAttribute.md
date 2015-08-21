@@ -3,7 +3,7 @@ span(style={color: 'red', backgroundColor: "blue", width: "500px"}) Test style a
 ```
 ```javascript
 import {createClass, createElement} from "react";
-function StyleAttribute()
+var StyleAttribute = function ()
 {
   return createClass({
     displayName: "StyleAttribute",
@@ -15,6 +15,6 @@ function StyleAttribute()
       }}, "Test style attribute");
     }
   })
-}
+}()
 module.exports = StyleAttribute;
 ```
